@@ -200,10 +200,10 @@ window.puzzClick = function(index) {
     if (c1.style.opacity === '1') return; // Already found
 
     // Mark as found
-    c1.src = 'https://pixflex.github.io/Diffrent/img/diff/makerD/found_green.png';
+    c1.src = 'https://pixflex.github.io/DiffrentX/img/diff/makerD/found_green.png';
     c1.style.opacity = '1';
     const c2 = document.getElementById(`diff_${index}_2`);
-    c2.src = 'https://pixflex.github.io/Diffrent/img/diff/makerD/found_green.png';
+    c2.src = 'https://pixflex.github.io/DiffrentX/img/diff/makerD/found_green.png';
     c2.style.opacity = '1';
 
     // Update score
@@ -263,10 +263,10 @@ function solve() {
     for (let i = 0; i < diffs.length; i++) {
         const c1 = document.getElementById(`diff_${i}`);
         if (c1 && c1.style.opacity !== '1') { // If not found by player
-            c1.src = 'https://pixflex.github.io/Diffrent/img/diff/makerD/found_red.png';
+            c1.src = 'https://pixflex.github.io/DiffrentX/img/diff/makerD/found_red.png';
             c1.style.opacity = '1';
             const c2 = document.getElementById(`diff_${i}_2`);
-            c2.src = 'https://pixflex.github.io/Diffrent/img/diff/makerD/found_red.png';
+            c2.src = 'https://pixflex.github.io/DiffrentX/img/diff/makerD/found_red.png';
             c2.style.opacity = '1';
         }
     }
