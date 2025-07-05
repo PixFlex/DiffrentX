@@ -1,0 +1,353 @@
+<!doctype html>
+<html dir="rtl" lang="ar">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>لعبة اختلاف الصور - لاعب</title>
+<link rel="icon" href="https://pixflex.github.io/Diffrent/img/home/favicon1.png" />
+<style>
+/*///////////////////////////////*/
+@font-face {
+  font-family: ltBukraBold;
+  src: url(https://pixflex.github.io/Diffrent/fonts/29ltbukrabold.otf);
+}
+@font-face {
+  font-family: AlHurraBold;
+  src: url(https://pixflex.github.io/Diffrent/fonts/AlHurraFontBold.ttf);
+}
+/*///////////////////////////////*/
+.announcement{
+  font:5.5vmin 'AlHurraBold';
+  text-decoration: none;
+  user-select: none;
+  color: white;
+  background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, rgb(0,255,0) 14.28%,
+                rgb(0,255,255) 21.4%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+  background-size: 600vw 600vw;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: slide 10s linear infinite forwards;
+}
+@keyframes slide {
+  0%{
+    background-position-x: 0%;
+  }
+  100%{
+    background-position-x: 600vw;
+  }
+}
+/*///////////////////////////////*/
+.button2 {
+  cursor: pointer;
+  text-decoration:    none;
+  font:           5vmin AlHurraBold;
+  font-weight:      bold;
+  text-shadow:      rgba(255,255,255,.5) 0 1px 0;
+  -webkit-user-select:  none;
+  -moz-user-select:     none;
+  user-select:      none;
+  padding:        .5em 0em .4em 0em;
+  display:        inline-block;
+  position:         relative;
+  border-radius:  8px;
+  border-top:     1px solid rgba(255,255,255,0.8);
+  border-bottom:    1px solid rgba(0,0,0,0.1);
+  background-image:   -webkit-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.7) ));
+  background-image:   -moz-radial-gradient(top, ellipse cover, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%);
+  background-image:   gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.7) ));
+  -webkit-transition: background .2s ease-in-out;
+  -moz-transition:  background .2s ease-in-out;
+  transition:     background .2s ease-in-out;
+  color:        hsl(208, 50%, 40%) !important;
+  background-color:   hsl(208, 100%, 75%);
+  box-shadow:     inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, /* inner shadow */ 
+                          hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px, /* color border */
+                          rgba(0,0,0,0.2) 0 .5em 5px; /* drop shadow */
+}
+/*///////////////////////////////*/
+.myBody {
+  padding:0;
+  margin:0;
+  background-image: url(https://pixflex.github.io/Diffrent/img/diff/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #000309;
+  color: white;
+}
+.gameDiv {
+  position: relative;
+  margin: 0 auto;
+  width: 98%;
+  max-width: 95vmin;
+}
+.gameDiv2 {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 95vmin;
+}
+.gameTable {
+  table-layout: fixed;
+  margin: 0 auto;
+  width: 100%;
+  border-spacing: 1vmin;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.passText {
+  text-decoration:none;
+  color:white;
+  font:4vmin 'AlHurraBold';
+  line-height: 5vmin;
+}
+.inputBody5{
+  text-align: center;
+  height: 10vmin;
+  font: 4.5vmin ltBukraBold;
+  width: 55%;
+}
+.logoTable {
+  table-layout: fixed;
+  margin: 0 auto;
+  color: #8cff00;
+  width: 100%;
+  border-spacing: 1vmin;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+/*///////////////////////////////*/
+.title {
+  font:3vmin ltBukraBold;
+  line-height:9vmin;
+}
+.timer {
+  font:6vmin ltBukraBold;
+  color:white;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.scoreTable {
+  width: 90%;
+  max-width: 800px;
+  margin: 4vmin auto;
+  border-collapse: collapse;
+  background-color: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden; /* Important for border-radius on table */
+  font: 3vmin ltBukraBold;
+  color: white;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.scoreTable thead tr {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffe600;
+  text-align: center;
+  font-size: 3.2vmin;
+}
+
+.scoreTable th,
+.scoreTable td {
+  padding: 2vmin 1.5vmin;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.scoreTable tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.scoreTable tbody tr:last-of-type {
+  border-bottom: none;
+}
+
+.scoreTable tbody tr.even-row {
+   background-color: rgba(0, 0, 0, 0.15);
+}
+
+.scoreTable tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.scoreTable .rank-cell {
+  font-size: 4vmin;
+  font-weight: bold;
+  color: #f0e68c;
+}
+
+.scoreTable .name-cell {
+  font-size: 3.2vmin;
+  color: #ffffff;
+  text-align: right;
+  padding-right: 3vmin;
+}
+
+.scoreTable .score-cell {
+  font-size: 3.5vmin;
+  color: #8cff00;
+  font-weight: bold;
+}
+
+.scoreTable .last-score-cell {
+  font-size: 3.5vmin;
+  color: #e0e0e0;
+}
+
+.scoreTable .last-score-cell.positive-score {
+    color: #4caf50;
+    font-weight: bold;
+}
+.wait {
+  font:4vmin ltBukraBold;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  color: #ffe600;
+}
+.wait2 {
+  font:4vmin ltBukraBold;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  color: white;
+}
+.userScoreTD {
+  font:7.5vmin ltBukraBold;
+  color:white;
+  -webkit-user-select:  none;
+  -moz-user-select:     none;
+  user-select:      none;
+}
+/*///////////////////////////////*/
+.circleDiv {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
+.circleImage {
+  position: absolute;
+  width: 9.5vmin;
+  z-index: 9;
+  display: none;
+}
+.puzzImgGrey {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+</style>
+<body class="myBody" align="middle">
+  <div id="savedDiv" style="display: none;">
+    <table class="gameTable" style="width: 90% !important; margin-top: 10vmin;">
+      <tr>
+        <td colspan="2" style="color: white;font:5vmin ltBukraBold;padding-top: 5vmin;">
+          <a class="announcement">لعبة اختلاف الصور</a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="color: white;font:5vmin ltBukraBold;padding-top: 5vmin;">
+           مرحبا
+        </td>
+      </tr>
+      <tr>
+          <td id="savedPlayerName" colspan="2" style="color: yellow;font:8vmin ltBukraBold;padding-top: 5vmin;padding-bottom: 5vmin;">
+          </td>
+      </tr>
+      <tr>
+          <td colspan="1" style="padding: 2vmin;">
+            <a onclick="goPlay()" class="button2" style="width: 100% !important;">دخول</a>
+          </td>
+          <td colspan="1" style="padding: 2vmin;">
+            <a onclick="changeUser()" class="button2" style="width: 100% !important;">تغيير الاسم</a>
+          </td>
+        </tr> 
+    </table>
+  </div>
+
+  <div id="passDiv" style="display: none;">
+      <table class="gameTable" style="width: 90% !important; margin-top: 10vmin;">
+        <tr >
+          <td colspan="6">
+            <p style="color: white;font:20px AlHurraBold;margin-top: 10px !important;margin-bottom: 10px !important;">
+              <a class="announcement">لعبة اختلاف الصور</a>
+            </p>
+          </td>  
+        </tr>
+        <tr>
+          <td>
+            <p class="passText" style="color: yellow !important;"> أدخل اسمك</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <br>
+            <input id="playerNameInput" class="inputBody5" />
+          </td>
+        </tr>  
+        <tr>
+          <td>
+            <br>
+            <p id="wrongPass" class="passText" style="color: yellow !important; display: none;">اسم اللاعب لا يمكن أن يكون فارغاً</p>
+          </td>
+        </tr>  
+        <tr>
+          <td>
+            <a id="enterButton" onclick="goPlay()" class="button2" style="width: 35%;">دخول</a>
+          </td>
+        </tr>  
+      </table>
+  </div>
+  
+  <div id="gameDiv" class="gameDiv" style="display: none;">
+    <div id="waitMsg" style="display: none;">
+        <p class="wait2">يرجى الانتظار يا</p>
+        <p class="wait" id="playerN"></p>
+        <p class="wait2">حتى تبدأ الجولة القادمة</p>
+    </div>
+    <div id="wholeDiv" class="gameDiv2" style="display: none;">
+      <table class="logoTable">
+        <tr>
+          <td colspan="2" id="diffNum" class="userScoreTD">0</td> 
+          <td colspan="3" id="timer" class="timer">1:00</td> 
+          <td colspan="2" id="userScoreTD" class="userScoreTD" style="color: #8cff00;">0</td> 
+        </tr>
+      </table>
+      <table id="gameTable" class="gameTable">
+        <tr>
+          <td style="position: relative;">
+            <div id="circleDiv" class="circleDiv"></div>
+            <img src="" id="puzzImage" onclick="wrongClick()" width="90%" draggable="false"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <table class="scoreTable" id="scoreTable" style="display:none;"></table>
+  </div>
+  
+<script src="https://gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyBFuKcjvfve5sbeaEeQyDNtrz6auCE2qJQ",
+  authDomain: "tobol-harb.firebaseapp.com",
+  databaseURL: "https://tobol-harb-default-rtdb.firebaseio.com",
+  projectId: "tobol-harb",
+  storageBucket: "tobol-harb.firebasestorage.app",
+  messagingSenderId: "1005785561791",
+  appId: "1:1005785561791:web:f0ac1ee2ba68413a5ca40a",
+  measurementId: "G-ECQV7NNKZQ"
+};
+firebase.initializeApp(firebaseConfig);
+</script>
+<script src="diffx.js"></script>
+</body>
+</html>
